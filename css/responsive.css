@@ -1,0 +1,54 @@
+/* =========================================================
+   responsive.css — Adaptation mobile / tablette / desktop
+   ========================================================= */
+
+/* ---------- Tablette (≤ 1024px) ---------- */
+@media (max-width: 1024px){
+  .grille-produits{ grid-template-columns: repeat(3, 1fr); }
+  .grille-categories{ grid-template-columns: repeat(3, 1fr); }
+  .grille-valeurs{ grid-template-columns: repeat(3, 1fr); }
+  .grille-offres{ grid-template-columns: repeat(2, 1fr); }
+  .detail-produit{ grid-template-columns: 1fr; }
+  .grille-contact{ grid-template-columns: 1fr; }
+  .pied__grille{ grid-template-columns: 1fr 1fr; }
+}
+
+/* ---------- Menu mobile (≤ 860px) ---------- */
+@media (max-width: 860px){
+  .nav-principale{ display:none; }
+  .btn-menu{ display:flex; }
+  .hero__contenu{ padding: 80px 0 90px; }
+}
+
+/* ---------- Mobile (≤ 640px) ---------- */
+@media (max-width: 640px){
+  .conteneur{ padding: 0 18px; }
+  .section{ padding: 56px 0; }
+  .grille-produits{ grid-template-columns: 1fr; }
+  .grille-categories{ grid-template-columns: repeat(2, 1fr); }
+  .grille-valeurs{ grid-template-columns: repeat(2, 1fr); }
+  .grille-offres{ grid-template-columns: 1fr; }
+  .pied__grille{ grid-template-columns: 1fr 1fr; gap: 24px; }
+  .deux-colonnes{ grid-template-columns: 1fr; }
+  .section__entete{ flex-direction:column; align-items:flex-start; }
+  .hero h1{ font-size: 2rem; }
+  .barre-outils{ flex-direction:column; align-items:stretch; }
+  .tableau-infos{ grid-template-columns: 1fr; }
+  .entete__barre{ gap: 10px; }
+  .logo span, .logo small{ font-size:.95rem; }
+}
+
+@media (max-width: 400px){
+  .grille-categories{ grid-template-columns: 1fr 1fr; }
+  .pied__grille{ grid-template-columns: 1fr; }
+  .pied__bas{ flex-direction:column; }
+}
+
+/* Interactions tactiles : cibles plus grandes */
+@media (hover: none) and (pointer: coarse){
+  .btn, .icone-btn, .bouton-favori, .puce{ min-height: 44px; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; scroll-behavior:auto !important; }
+}

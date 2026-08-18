@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Montagne Maghraoui & Partenaires — Le goût authentique de la nature</title>
+<meta name="description" content="Produits agricoles et naturels frais de la montagne et de la campagne tunisienne : agneaux, bovins, poulets, œufs, légumes et fruits.">
+<link rel="icon" href="images/logo.png">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<header class="entete">
+  <div class="conteneur entete__barre">
+    <a href="index.html" class="logo">
+      <img src="images/logo.png" alt="Logo Montagne Maghraoui">
+      <span>Montagne Maghraoui<br><small>&amp; Partenaires</small></span>
+    </a>
+    <nav class="nav-principale">
+      <a href="index.html">Accueil</a>
+      <a href="produits.html">Produits</a>
+      <a href="offres.html">Offres</a>
+      <a href="apropos.html">À propos</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="entete__actions">
+      <a class="icone-btn" href="produits.html" aria-label="Recherche">🔍</a>
+      <a class="icone-btn" href="favoris.html" aria-label="Favoris">
+        ❤️<span class="compteur" data-compteur-favoris>0</span>
+      </a>
+      <a class="icone-btn" href="panier.html" aria-label="Panier">
+        🛒<span class="compteur" data-compteur-panier>0</span>
+      </a>
+      <a class="btn btn-contour-sombre btn-petit" href="admin.html" style="margin-left:6px;">Espace Admin</a>
+      <button class="btn-menu" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<nav class="nav-mobile">
+  <button class="nav-mobile__fermer" aria-label="Fermer le menu">✕</button>
+  <a href="index.html">Accueil</a>
+  <a href="produits.html">Produits</a>
+  <a href="offres.html">Offres</a>
+  <a href="apropos.html">À propos</a>
+  <a href="contact.html">Contact</a>
+  <a href="favoris.html">Favoris</a>
+  <a href="panier.html">Panier</a>
+  <a href="admin.html">Espace Admin</a>
+</nav>
+
+<main>
+
+  <!-- Hero -->
+  <section class="hero">
+    <img class="hero__contours" src="images/hero.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;">
+    <div class="conteneur hero__contenu">
+      <span class="eyebrow" style="color:var(--dore-clair)">Ferme &amp; terroir tunisien</span>
+      <h1>Le goût authentique de la nature</h1>
+      <p>Des produits frais, locaux et sélectionnés avec soin directement depuis nos terres et nos élevages.</p>
+      <div class="hero__actions">
+        <a class="btn btn-doree" href="produits.html">Découvrir nos produits</a>
+        <a class="btn btn-contour" href="offres.html">Voir les offres</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catégories -->
+  <section class="section">
+    <div class="conteneur">
+      <div class="section__entete">
+        <div>
+          <span class="eyebrow">Notre catalogue</span>
+          <h2>Nos catégories</h2>
+        </div>
+        <p>De l'élevage en plein air aux légumes de saison, chaque produit vient directement de nos partenaires agricoles.</p>
+      </div>
+      <div class="grille-categories">
+        <a class="carte-categorie" href="produits.html?categorie=Agneaux"><span class="emoji">🐑</span><span>Agneaux</span></a>
+        <a class="carte-categorie" href="produits.html?categorie=Bovins"><span class="emoji">🐄</span><span>Bovins</span></a>
+        <a class="carte-categorie" href="produits.html?categorie=Poulets"><span class="emoji">🐔</span><span>Poulets</span></a>
+        <a class="carte-categorie" href="produits.html?categorie=Œufs"><span class="emoji">🥚</span><span>Œufs</span></a>
+        <a class="carte-categorie" href="produits.html?categorie=Légumes"><span class="emoji">🥬</span><span>Légumes</span></a>
+        <a class="carte-categorie" href="produits.html?categorie=Fruits"><span class="emoji">🍎</span><span>Fruits</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Produits populaires -->
+  <section class="section section--alt">
+    <div class="conteneur">
+      <div class="section__entete">
+        <div>
+          <span class="eyebrow">Sélection du moment</span>
+          <h2>Produits populaires</h2>
+        </div>
+        <a class="btn btn-contour-sombre btn-petit" href="produits.html">Voir tout le catalogue</a>
+      </div>
+      <div class="grille-produits" id="grille-produits-populaires">
+        <p class="chargement">Chargement des produits…</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Valeurs rapides -->
+  <section class="section">
+    <div class="conteneur">
+      <div class="section__entete">
+        <div>
+          <span class="eyebrow">Pourquoi nous choisir</span>
+          <h2>Une agriculture de confiance</h2>
+        </div>
+      </div>
+      <div class="grille-valeurs">
+        <div class="carte-valeur"><span class="emoji">🌱</span><span>Nature</span></div>
+        <div class="carte-valeur"><span class="emoji">🤝</span><span>Confiance</span></div>
+        <div class="carte-valeur"><span class="emoji">⭐</span><span>Qualité</span></div>
+        <div class="carte-valeur"><span class="emoji">🇹🇳</span><span>Produit local</span></div>
+        <div class="carte-valeur"><span class="emoji">❤️</span><span>Passion</span></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pied">
+  <div class="conteneur">
+    <div class="pied__grille">
+      <div>
+        <div class="logo"><img src="images/logo.png" alt=""><span>Montagne Maghraoui<br><small style="color:var(--dore-clair)">&amp; Partenaires</small></span></div>
+        <p>Des produits locaux, frais et authentiques.</p>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="produits.html">Produits</a></li>
+          <li><a href="offres.html">Offres</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Espace</h4>
+        <ul>
+          <li><a href="favoris.html">Favoris</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="admin.html">Administration</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>📞 +216 71 234 567</li>
+          <li>✉️ contact@montagne-maghraoui.tn</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pied__bas">
+      <span>© 2026 Montagne Maghraoui &amp; Partenaires</span>
+      <span>Site vitrine statique — démonstration</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+(async function(){
+  const zone = document.getElementById("grille-produits-populaires");
+  const produits = await MM.chargerProduits();
+  const populaires = produits.filter(p => p.badge === "Meilleure vente" || p.promotion).slice(0, 8);
+  zone.innerHTML = populaires.map(MM.carteProduitHTML).join("");
+  MM.activerActionsProduits(zone, produits);
+})();
+</script>
+</body>
+</html>

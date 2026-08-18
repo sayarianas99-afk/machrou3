@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Détail produit — Montagne Maghraoui & Partenaires</title>
+<meta name="description" content="Détails du produit : origine, mode d'élevage ou de culture, qualité et prix.">
+<link rel="icon" href="images/logo.png">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<header class="entete">
+  <div class="conteneur entete__barre">
+    <a href="index.html" class="logo">
+      <img src="images/logo.png" alt="Logo Montagne Maghraoui">
+      <span>Montagne Maghraoui<br><small>&amp; Partenaires</small></span>
+    </a>
+    <nav class="nav-principale">
+      <a href="index.html" class="">Accueil</a>
+      <a href="produits.html" class="actif">Produits</a>
+      <a href="offres.html" class="">Offres</a>
+      <a href="apropos.html" class="">À propos</a>
+      <a href="contact.html" class="">Contact</a>
+    </nav>
+    <div class="entete__actions">
+      <a class="icone-btn" href="produits.html" aria-label="Recherche">🔍</a>
+      <a class="icone-btn" href="favoris.html" aria-label="Favoris">
+        ❤️<span class="compteur" data-compteur-favoris>0</span>
+      </a>
+      <a class="icone-btn" href="panier.html" aria-label="Panier">
+        🛒<span class="compteur" data-compteur-panier>0</span>
+      </a>
+      <a class="btn btn-contour-sombre btn-petit" href="admin.html" style="margin-left:6px;">Espace Admin</a>
+      <button class="btn-menu" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<nav class="nav-mobile">
+  <button class="nav-mobile__fermer" aria-label="Fermer le menu">✕</button>
+  <a href="index.html">Accueil</a>
+  <a href="produits.html">Produits</a>
+  <a href="offres.html">Offres</a>
+  <a href="apropos.html">À propos</a>
+  <a href="contact.html">Contact</a>
+  <a href="favoris.html">Favoris</a>
+  <a href="panier.html">Panier</a>
+  <a href="admin.html">Espace Admin</a>
+</nav>
+
+
+<main>
+
+  <section class="section" style="padding-top:50px;">
+    <div class="conteneur">
+      <div id="zone-detail-produit">
+        <p class="chargement">Chargement du produit…</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="section-similaires">
+    <div class="conteneur">
+      <div class="section__entete">
+        <div>
+          <span class="eyebrow">Vous aimerez aussi</span>
+          <h2>Produits similaires</h2>
+        </div>
+      </div>
+      <div class="grille-produits" id="grille-similaires"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pied">
+  <div class="conteneur">
+    <div class="pied__grille">
+      <div>
+        <div class="logo"><img src="images/logo.png" alt=""><span>Montagne Maghraoui<br><small style="color:var(--dore-clair)">&amp; Partenaires</small></span></div>
+        <p>Des produits locaux, frais et authentiques.</p>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="produits.html">Produits</a></li>
+          <li><a href="offres.html">Offres</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Espace</h4>
+        <ul>
+          <li><a href="favoris.html">Favoris</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="admin.html">Administration</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>📞 +216 71 234 567</li>
+          <li>✉️ contact@montagne-maghraoui.tn</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pied__bas">
+      <span>© 2026 Montagne Maghraoui &amp; Partenaires</span>
+      <span>Site vitrine statique — démonstration</span>
+    </div>
+  </div>
+</footer>
+
+
+<script src="js/main.js"></script>
+<script src="js/produit-details.js"></script>
+</body>
+</html>

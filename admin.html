@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Espace Admin — Montagne Maghraoui & Partenaires</title>
+<link rel="icon" href="images/logo.png">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+<!-- ===================== PAGE DE CONNEXION ===================== -->
+<div class="page-connexion" id="page-connexion">
+  <div class="carte-connexion">
+    <div class="logo"><img src="images/logo.png" alt=""><span>Montagne Maghraoui</span></div>
+    <h1>Espace Admin</h1>
+    <p class="sous-titre">Connectez-vous pour gérer le catalogue de produits.</p>
+    <div class="erreur-connexion" id="erreur-connexion"></div>
+    <form id="form-connexion">
+      <div class="champ" style="text-align:left;">
+        <label for="champ-utilisateur">Identifiant</label>
+        <input type="text" id="champ-utilisateur" required autocomplete="username">
+      </div>
+      <div class="champ" style="text-align:left;">
+        <label for="champ-motdepasse">Mot de passe</label>
+        <input type="password" id="champ-motdepasse" required autocomplete="current-password">
+      </div>
+      <button type="submit" class="btn btn-primaire btn-bloc">Se connecter</button>
+    </form>
+    <div class="identifiants-demo">
+      Démonstration uniquement — identifiant : <strong>admin</strong> / mot de passe : <strong>admin123</strong>.
+      Ceci n'est pas un système d'authentification sécurisé.
+    </div>
+    <a href="index.html" class="btn btn-contour-sombre btn-bloc mt-40">← Retour au site</a>
+  </div>
+</div>
+
+<!-- ===================== DASHBOARD ===================== -->
+<div class="admin-shell" id="page-dashboard" style="display:none;">
+  <aside class="admin-barre-laterale">
+    <div class="logo"><img src="images/logo.png" alt=""><span><b>Montagne Maghraoui</b><br><small>Espace Admin</small></span></div>
+    <a href="#" class="actif"><span>📊</span><span class="libelle-nav">Dashboard</span></a>
+    <a href="index.html" target="_blank"><span>🌐</span><span class="libelle-nav">Voir le site</span></a>
+    <button class="deconnexion" id="btn-deconnexion"><span>🚪</span><span class="libelle-nav">Déconnexion</span></button>
+  </aside>
+
+  <div class="admin-contenu">
+    <div class="mention-demo">
+      ⚠️ Cet espace d'administration est une démonstration frontend basée sur LocalStorage. Il ne constitue pas un système sécurisé — un vrai site marchand nécessiterait un backend et une authentification réelle.
+    </div>
+
+    <div class="admin-entete-page">
+      <h1>Tableau de bord</h1>
+      <button class="btn btn-primaire" id="btn-ajouter-produit">+ Ajouter un produit</button>
+    </div>
+
+    <div class="grille-stats" id="stats-conteneur"></div>
+
+    <div class="panneau">
+      <h3 style="margin-bottom:16px;">Gestion des produits</h3>
+      <div style="overflow-x:auto;">
+        <table class="table-admin">
+          <thead>
+            <tr>
+              <th>Produit</th><th>Catégorie</th><th>Prix</th><th>Stock</th><th>Promotion</th><th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="corps-tableau-produits"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== MODALE AJOUT / MODIFICATION ===================== -->
+<div class="superposition" id="superposition-formulaire">
+  <div class="modale">
+    <div class="modale__entete">
+      <h3 id="titre-modale-produit">Ajouter un produit</h3>
+      <button class="modale__fermer" data-role="fermer-modale" aria-label="Fermer">✕</button>
+    </div>
+    <form id="form-produit">
+      <div class="grille-form">
+        <div class="champ pleine-largeur">
+          <label>Nom</label>
+          <input type="text" name="nom" required>
+        </div>
+        <div class="champ">
+          <label>Catégorie</label>
+          <select name="categorie" required>
+            <option>Agneaux</option>
+            <option>Bovins</option>
+            <option>Poulets</option>
+            <option>Œufs</option>
+            <option>Légumes</option>
+            <option>Fruits</option>
+          </select>
+        </div>
+        <div class="champ">
+          <label>Unité</label>
+          <input type="text" name="unite" placeholder="kg, plateau…" required>
+        </div>
+        <div class="champ pleine-largeur">
+          <label>Description courte</label>
+          <input type="text" name="descriptionCourte" required>
+        </div>
+        <div class="champ pleine-largeur">
+          <label>Description détaillée</label>
+          <textarea name="description" required></textarea>
+        </div>
+        <div class="champ">
+          <label>Prix (DT)</label>
+          <input type="number" step="0.01" name="prix" required>
+        </div>
+        <div class="champ">
+          <label>Ancien prix (DT)</label>
+          <input type="number" step="0.01" name="ancienPrix">
+        </div>
+        <div class="champ">
+          <label>Stock</label>
+          <input type="number" name="stock" required>
+        </div>
+        <div class="champ">
+          <label>Origine</label>
+          <input type="text" name="origine" value="Tunisie">
+        </div>
+        <div class="champ">
+          <label>Mode d'élevage / culture</label>
+          <input type="text" name="elevageCulture">
+        </div>
+        <div class="champ">
+          <label>Qualité</label>
+          <input type="text" name="qualite">
+        </div>
+        <div class="champ">
+          <label>Image (chemin)</label>
+          <input type="text" name="image" placeholder="images/legumes.jpg">
+        </div>
+        <div class="champ">
+          <label>Badge</label>
+          <select name="badge">
+            <option value="">Aucun</option>
+            <option value="Nouveau">Nouveau</option>
+            <option value="Meilleure vente">Meilleure vente</option>
+            <option value="Promo">Promo</option>
+          </select>
+        </div>
+        <div class="champ" style="display:flex;align-items:center;gap:8px;margin-top:24px;">
+          <input type="checkbox" name="disponible" id="chk-disponible" style="width:auto;">
+          <label for="chk-disponible" style="margin:0;">Disponible</label>
+        </div>
+        <div class="champ" style="display:flex;align-items:center;gap:8px;margin-top:24px;">
+          <input type="checkbox" name="promotion" id="chk-promotion" style="width:auto;">
+          <label for="chk-promotion" style="margin:0;">En promotion</label>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primaire btn-bloc mt-40">Ajouter le produit</button>
+    </form>
+  </div>
+</div>
+
+<!-- ===================== MODALE SUPPRESSION ===================== -->
+<div class="superposition" id="superposition-suppression">
+  <div class="modale" style="max-width:420px;text-align:center;">
+    <span style="font-size:2.2rem;">⚠️</span>
+    <h3>Confirmer la suppression</h3>
+    <p id="texte-confirmation-suppression">Êtes-vous sûr de vouloir supprimer ce produit ?</p>
+    <div style="display:flex;gap:12px;margin-top:20px;">
+      <button class="btn btn-contour-sombre btn-bloc" id="btn-annuler-suppression">Annuler</button>
+      <button class="btn btn-danger btn-bloc" id="btn-confirmer-suppression">Oui, supprimer</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
